@@ -89,6 +89,7 @@ class App extends Component {
 }
 }
 
+
  getUserFavs = () => {
 
    let token = localStorage.getItem("token")

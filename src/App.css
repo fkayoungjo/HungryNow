@@ -31,7 +31,3 @@
     transform: rotate(360deg);
   }
 }
-
-.image a:hover {
-    background-color: #111;
-  }
