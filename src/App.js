@@ -4,6 +4,7 @@ import Home from './Home.js';
 import Signup from './Signup.js';
 import Login from './Login.js';
 import Profile from './Profile.js';
+import ContactUs from './ContactUs.js'
 import Search from './Search.js';
 import {connect} from 'react-redux';
 import {getProfileFetch, logoutUser} from './actions/userActions.js';
@@ -89,7 +90,7 @@ class App extends Component {
 }
 
  getUserFavs = () => {
-   
+
    let token = localStorage.getItem("token")
    if (token !== null ) {
    return fetch("http://localhost:3000/api/v1/favorites",{
@@ -144,6 +145,7 @@ deleteFav = (e) => {
 
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/contactus" component={ContactUs} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
           <Route exact path= '/profile' render={()=> (this.props.currentUser.username) ? <Profile user={this.props.currentUser} logout={this.handleLogout} userFavs={this.state.userFavs} deleteFav={this.deleteFav} /> : <Login />} />

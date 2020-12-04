@@ -21,6 +21,8 @@ class Search extends Component {
 
   }
 
+
+
   setType = (e) => {
     this.setState({
       type: e.target.value
@@ -249,7 +251,7 @@ class Search extends Component {
             </Form>
         </div>
         <Modal isOpen={this.state.modal} toggle={this.toggle} >
-          <ModalHeader toggle={this.toggle}>Your Matches</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Your Matches  </ModalHeader>
 
             {this.state.type === "cook"  &&
             <Results results={this.state.results} user={this.props.user} saveFavortie={this.props.saveFavortie}/>

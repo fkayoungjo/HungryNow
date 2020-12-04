@@ -1,5 +1,4 @@
 export const userPostFetch = user => {
-  debugger
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/users", {
       method: "POST",

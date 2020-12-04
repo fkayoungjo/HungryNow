@@ -15,10 +15,7 @@ export const Navigation = (props) => {
           <NavLink> {props.time} </NavLink>
           </NavItem>
             <NavItem>
-              <NavLink href="/#about">ABOUT</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/#contact_us">CONTACT</NavLink>
+              <NavLink href="/contactus">CONTACT</NavLink>
             </NavItem>
             <NavItem>
 
