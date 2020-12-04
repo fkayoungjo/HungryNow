@@ -35,7 +35,7 @@ class Results extends Component {
       <button onClick={(e) => this.handleClick(e)} >Sort</button>
     {list.map(result => <ul key={result.recipe.label}>
 
-    <Row><NavLink  href={result.recipe.url} target="_blank" className="navitem"><Col xs="auto"><img src={result.recipe.image} alt="link" width="75" height="75"/></Col><Col xs="auto"><h6>{result.recipe.label}</h6></Col></NavLink><Col xs="auto"><img src={heart} alt="heart" width="30" height="30" name={result.recipe.label} id={result.recipe.url} onClick={(e) => this.props.saveFavortie(e)}/></Col></Row>
+    <Row><NavLink  href={result.recipe.url} target="_blank" className="navitem"><Col ><img src={result.recipe.image} alt="link" width="75" height="75"/></Col><Col ><h6>{result.recipe.label}</h6></Col></NavLink></Row ><Row><Col></Col><Col></Col><Col></Col><Col></Col><Col><img src={heart} className='image' alt="heart" width="30" height="30" name={result.recipe.label} id={result.recipe.url} onClick={(e) => this.props.saveFavortie(e)}/></Col></Row>
     </ul>)}
     </div>
   );
