@@ -4,7 +4,7 @@ import { Button, Jumbotron, Col, Row, ListGroupItem, ListGroup } from 'reactstra
 
 
 
-export const Profile = (props) => {
+export const Users = (props) => {
 
   return (
 
@@ -17,4 +17,4 @@ export const Profile = (props) => {
 
 
 
-export default Profile;
+export default Users;
