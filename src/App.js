@@ -19,7 +19,8 @@ class App extends Component {
     hour: null,
     favorites: [],
     userFavs: [],
-    users: []
+    users: [],
+    profile: []
 
   }
 
@@ -105,6 +106,24 @@ getUsers = () => {
 .then(res => res.json())
 .then(res => {
  this.setState({users: res})
+})
+}
+}
+
+displayUser = () => {
+  const token = localStorage.token;
+  if (token) {
+    return fetch("http://localhost:3000/api/v1/profile", {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({profile: res})
 })
 }
 }
