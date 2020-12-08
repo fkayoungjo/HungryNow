@@ -18,6 +18,12 @@ export const Navigation = (props) => {
               <NavLink href="/contactus">CONTACT</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href="/users">USERS</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/friends">FRIENDS</NavLink>
+            </NavItem>
+            <NavItem>
 
               <NavLink href="/profile"><img src={profile} alt="profile" width="25" height="25"/></NavLink>
             </NavItem>

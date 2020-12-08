@@ -6,6 +6,7 @@ import Login from './Login.js';
 import Profile from './Profile.js';
 import ContactUs from './ContactUs.js'
 import Search from './Search.js';
+import Users from './Users.js';
 import {connect} from 'react-redux';
 import {getProfileFetch, logoutUser} from './actions/userActions.js';
 import {Switch, Route, withRouter} from 'react-router-dom';
@@ -17,7 +18,8 @@ class App extends Component {
     time: null,
     hour: null,
     favorites: [],
-    userFavs: []
+    userFavs: [],
+    users: []
 
   }
 
@@ -26,7 +28,7 @@ class App extends Component {
   this.props.getProfileFetch()
   this.getFavorites()
   this.getUserFavs()
-
+  this.getUsers()
   }
 
   handleLogout = event => {
@@ -86,6 +88,24 @@ class App extends Component {
  .then(res => {
    this.setState({favorites: res})
  })
+}
+}
+
+getUsers = () => {
+ let token = localStorage.getItem("token")
+ if (token !== null ) {
+ return fetch('http://localhost:3000/api/v1/users', {
+ method: 'GET',
+ headers: {
+   "Content-Type": "application/json",
+   Action: "application/json",
+   Authorization: `Bearer ${token}`
+ }
+})
+.then(res => res.json())
+.then(res => {
+ this.setState({users: res})
+})
 }
 }
 
@@ -150,6 +170,7 @@ deleteFav = (e) => {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
           <Route exact path= '/profile' render={()=> (this.props.currentUser.username) ? <Profile user={this.props.currentUser} logout={this.handleLogout} userFavs={this.state.userFavs} deleteFav={this.deleteFav} /> : <Login />} />
+          <Route exact path= '/users' render={()=> (this.props.currentUser.username) ? <Users user={this.props.currentUser} users={this.state.users} /> : <Login />} />
           <Route exact path= '/search' render={()=> (this.props.currentUser.username) ? <Search time={this.state.time} hour={this.state.hour} user={this.props.currentUser} saveFavortie={this.saveFavortie} /> : <Login />} />
 
           </Switch>
