@@ -180,7 +180,6 @@ deleteFav = (e) => {
           <Navigation time={this.state.time}/>
         </header>
         <div className="hjumbo" style={{backgroundImage: `url(${plate})`, backgroundSize: 'cover'}} >
-        </div>
         <div>
 
           <Switch>
@@ -194,6 +193,8 @@ deleteFav = (e) => {
 
           </Switch>
         </div>
+        </div>
+
       </div>
     )
   }
