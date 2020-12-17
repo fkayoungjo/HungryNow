@@ -5,7 +5,7 @@ import heart from './heart.png';
 
 class Results extends Component {
     state = {
-      
+      isSorted: false
     }
 
     handleClick = (e) => {
