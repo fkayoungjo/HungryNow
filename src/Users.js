@@ -14,7 +14,7 @@ export const Users = (props) => {
     {props.users.map(user =>  <ul>
 
       <Row><Col><img  src={user.avatar}
-      alt="profile" width="75" height="75"/></Col><Col><h3>{user.username}</h3></Col></Row>
+      alt="profile" width="100" height="100"/></Col><Col><h3>{user.username}</h3></Col></Row>
 
       </ul>)}
       </Jumbotron >
