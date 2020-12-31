@@ -20,7 +20,7 @@ export const Users = (props) => {
 
       </ul>)}
       </Jumbotron >
-      <div>
+      </div>
   </div>
 
   );
