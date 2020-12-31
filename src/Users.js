@@ -10,6 +10,7 @@ export const Users = (props) => {
   return (
 
      <div className="profile">
+     <div>
      <Jumbotron className="jumbotron" style={{backgroundImage: `url(${white})`, backgroundSize: 'cover'}}>
     {props.users.map(user =>  <ul>
 
@@ -18,6 +19,7 @@ export const Users = (props) => {
 
       </ul>)}
       </Jumbotron >
+      <div>
   </div>
 
   );
