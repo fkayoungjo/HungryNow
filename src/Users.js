@@ -12,6 +12,7 @@ export const Users = (props) => {
      <div className="profile">
      <div>
      <Jumbotron className="jumbotron" style={{backgroundImage: `url(${white})`, backgroundSize: 'cover'}}>
+     <h3> Click to view Profile </h3>
     {props.users.map(user =>  <ul>
 
       <Row><Col><img  src={user.avatar}
